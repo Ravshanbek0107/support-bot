@@ -1,0 +1,52 @@
+spring:
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/supportbot
+    username: postgres
+    password: 1
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  messages:
+    basename: messages
+    encoding: UTF-8
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+
+
+logging:
+  level:
+    org.springdoc: DEBUG
+    org.hibernate.SQL: DEBUG
+
+
+telegram:
+  bot:
+    username: supp0rt_dem0_bot
+    token: 8356339888:AAGdL9Lhu337MUgrgC_YB6He7gCLQ89CEpg
+
+
